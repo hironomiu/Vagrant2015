@@ -1,0 +1,32 @@
+PidFile = /var/run/hhvm/pid
+
+Server {
+  FileSocket = /var/run/hhvm/sock
+  Type = fastcgi
+#  SourceRoot = /home/appuser/
+#  DefaultDocument = index.php
+}
+
+Eval {
+  JitWarmupRequests=3
+  CheckSymLink = true
+}
+
+Log {
+  Level = Warning
+  AlwaysLogUnhandledExceptions = true
+  RuntimeErrorReportingLevel = 8191
+  UseLogFile = true
+  UseSyslog = false
+  File = /var/log/hhvm/error.log
+}
+
+Repo {
+  Central {
+    Path = /var/run/hhvm/.hhvm.hhbc
+  }
+}
+
+MySQL {
+  TypedResults = false
+}
