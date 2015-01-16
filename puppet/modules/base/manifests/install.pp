@@ -13,6 +13,7 @@ class base::install{
         'wget',
         'screen',
         'unzip',
+        'tree',
         'make',
         'git',
         'dstat',
